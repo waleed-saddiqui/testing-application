@@ -1,0 +1,58 @@
+/* SigmaProductDisplay.css */
+
+.product-display-container {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .product-display-container .product-image {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .product-display-container .product-title {
+    font-size: 1.5em;
+    margin-top: 10px;
+  }
+  
+  .product-display-container .product-variants {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  
+  .product-display-container .product-price {
+    margin: 0 10px;
+    text-align: center;
+  }
+  
+  .product-display-container .price {
+    font-size: 1.2em;
+    color: #333;
+  }
+  
+  .product-display-container .compare-price {
+    text-decoration: line-through;
+    color: #999;
+  }
+  
+  .product-display-container .add-to-cart-btn {
+    padding: 20px 40px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background: #ff4141;
+    margin-bottom: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .product-display-container .add-to-cart-btn:hover {
+    background-color: #45a049;
+  }
+  

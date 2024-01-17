@@ -1,0 +1,111 @@
+/* CartDrawer Component Styles */
+
+.cart-component .cartdrawer {
+    position: relative;
+  }
+    
+  .cart-component .cart-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 300px;
+    background-color: white;
+    box-shadow: -1px 0px 7px 0px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .cart-component .cart-drawer.open {
+    transform: translateX(0);
+  }
+  
+  .cart-component .cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ff4241;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .cart-component .cart-component #closeCart {
+    cursor: pointer;
+    font-size: 22px;
+  }
+  
+  .cart-component .cart-items {
+    padding: 10px;
+  }
+  
+  .cart-component .drawer-cartitems-format-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+  
+  .cart-component .drawer-carticon-product-icon {
+    margin-right: 20px;
+    height: 85px;
+  }
+  
+  .cart-component .drawer-counter {
+    display: flex;
+    align-items: center;
+  }
+  
+  .drawer-counter span,
+  .drawer-counter button {
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  
+  .cart-component .drawer-cartitems-quantity {
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    padding: 5px;
+    margin: 0 5px;
+  }
+  .cart-component .drawer-cart-item-list {
+    display: flex;
+    justify-content: space-around;
+    
+    margin-top: 15px;
+}
+.cart-component .drawer-cart-item-list p {
+    font-weight: 700;
+}
+.cart-component .drawer-total-result {
+  margin-left: 10px;
+}
+div#cartDrawer {
+  z-index: 999;
+  overflow-x: scroll;
+}
+span#closeCart {
+  font-size: 22px;
+  cursor: pointer;
+}
+.drawer-total-result .cartitems-down{
+  margin-top: 20px;
+}
+.drawer-total-result .cartitems-total{
+  gap: 20px;
+}
+.cart-component #openCart {
+  width: 157px;
+  height: 58px;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  border-radius: 75px;
+  font-size: 20px;
+  font-weight: 500;
+  background: #ff532e;
+  cursor: pointer;
+}
+  
+  /* Add your other component-specific styles here */
+  
+  
