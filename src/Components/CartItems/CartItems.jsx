@@ -1,11 +1,16 @@
 import React, { useContext } from 'react';
 import './CartItems.css';
 import { ShopContext } from '../../Context/ShopContext';
+//import { useProductContext } from '../../Context/SigmaContextApi';
 
 //import remove_icon from "../Assets/cart_cross_icon.png";
 
 const CartItems = () => {
     const { removeEntireFromCart, addToCart, getTotalCartAmount, all_product, cartItems, removeFromCart } = useContext(ShopContext);
+
+ 
+
+   
 
     return (
         <div className='cartitems'> 
@@ -64,6 +69,10 @@ const CartItems = () => {
                 }
                 return null; // To satisfy React's requirement of returning a value from map.
             })}
+
+           
+
+            
             
             <div className="cartitems-down">
                 <div className="cartitems-total">
