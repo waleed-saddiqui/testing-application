@@ -8,9 +8,6 @@ import { ShopContext } from '../../Context/ShopContext';
 const CartItems = () => {
     const { removeEntireFromCart, addToCart, getTotalCartAmount, all_product, cartItems, removeFromCart } = useContext(ShopContext);
 
- 
-
-   
 
     return (
         <div className='cartitems'> 
@@ -25,11 +22,11 @@ const CartItems = () => {
 
             <hr />
 
-            {all_product.map((e) => {
+            {all_product.map((e, i) => {
                 if (cartItems[e.id] > 0) {
                     return (
                       <>
-                        <div key={e.id} className="cartitems-format cartitems-format-main">
+                        <div key={i} id={e.id} className="cartitems-format cartitems-format-main">
                             <img className='carticon-product-icon' src={e.image} alt="" />
                             <p>{e.name}</p>
                             <p>${e.new_price}</p>
@@ -69,6 +66,9 @@ const CartItems = () => {
                 }
                 return null; // To satisfy React's requirement of returning a value from map.
             })}
+
+
+            
 
            
 
@@ -114,6 +114,8 @@ const CartItems = () => {
 
         </div>
     );
+
+    
 }
 
 export default CartItems;

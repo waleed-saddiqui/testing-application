@@ -1,24 +1,29 @@
-const API = 'http://localhost:3400/getdata';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-    const GetSigma = () => {
-       
-        let products = [];
-    
-      
-        const getApiData = async (url) => {
-            try {
-                const res = await axios.get(url);
-                const productApi = res.data.products;
-                products = productApi;
-                console.log("Sigma Products", products);
-           
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        }
+const FetchApiData = () => {
+  const [products, setProducts] = useState([]);
 
-        getApiData(API);
-    
-        return null;
+
+  const getApiData = async (url) => {
+    try {
+      const res = await axios.get(url);
+      const productApi = res.data.products;
+      setProducts(productApi);
+      console.log("Sigma Products context Api", productApi);
+    } catch (error) {
+      console.error("Error fetching data:", error);
     }
- 
+  };
+
+  useEffect(() => {
+    const API = 'http://localhost:3400/getdata';
+    getApiData(API);
+  }, []);
+
+  return (
+    <></>
+  );
+};
+
+export default FetchApiData;

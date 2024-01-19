@@ -32,11 +32,11 @@ const CartDrawer = () => {
           <div className="cart-items">
           <hr />
 
-{all_product.map((e) => {
+{all_product.map((e, i) => {
     if (cartItems[e.id] > 0) {
         return (
           <>
-            <div key={e.id} className="drawer-cartitems-format drawer-cartitems-format-main">
+            <div key={i} id={e.id} className="drawer-cartitems-format drawer-cartitems-format-main">
                 <img className='drawer-carticon-product-icon' src={e.image} alt="" />
                <div className='drawe-alignment'>
                <p>{e.name}</p>

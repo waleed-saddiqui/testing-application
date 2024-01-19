@@ -8,7 +8,7 @@ import { useProductContext } from '../../Context/SigmaContextApi';
 
 const SigmaProductDisplay = ({ sigma }) => {
 
-  const {addSigmaCart} = useProductContext();
+  const {addToCart} = useProductContext();
   
   return (
     <div className='productdisplay'>
@@ -71,7 +71,7 @@ const SigmaProductDisplay = ({ sigma }) => {
           </div>
       </div>
 
-      <button onClick={()=>{addSigmaCart(sigma.id)}}>ADD TO CART</button>
+      <button onClick={()=>{addToCart(sigma.id)}}>ADD TO CART</button>
       
       <p className='productdisplay-right-category'><span>Category : </span>Women, T-Shirt, Crop-Top</p>
       <p className='productdisplay-right-category'><span>Tags : </span>Modern, Latest</p>

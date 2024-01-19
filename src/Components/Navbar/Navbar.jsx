@@ -6,6 +6,7 @@ import cart_icon from '../Assets/cart_icon.png';
 import { Link } from "react-router-dom";
 import { ShopContext } from "../../Context/ShopContext";
 import CartDrawer from "../CartDrawer/CartDrawer";
+import { useProductContext } from "../../Context/SigmaContextApi";
 
 const Navbar = ()=>{
 
@@ -14,6 +15,8 @@ const[menu, setmenu]=useState("shop");
 console.log("hi", menu);
 
 const {getTotalCartItems} = useContext(ShopContext);
+
+const {SigmaTotalCartItems} = useProductContext();
 
 return(
 <div className="navbar">
@@ -37,7 +40,7 @@ return(
 <Link to="/cart"><img src={cart_icon} alt="" /></Link>
 
 
-<div className="nav-cart-count">{getTotalCartItems()}</div>
+<div className="nav-cart-count">{getTotalCartItems() + SigmaTotalCartItems()}</div>
 
 
 </div>
