@@ -1,0 +1,12 @@
+.wrap{
+   margin: 100px 170px; 
+}
+.sigma-cart-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.count-inner {
+    display: flex;
+    gap: 44px;
+}

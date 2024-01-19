@@ -28,8 +28,8 @@ const ShopContextProvider = (props)=>{
 
         setCartItems((prev) => {
             const updatedCart = { ...prev, [itemId]: prev[itemId] + 1 };
-            console.log("Item ID:", itemId);
-            console.log("Updated Cart:", updatedCart);
+            //console.log("Item ID:", itemId);
+            //console.log("Updated Cart:", updatedCart);
             return updatedCart;
         });
 
@@ -41,7 +41,7 @@ const ShopContextProvider = (props)=>{
 
         setCartItems((prev) => {
             const removeCart = { ...prev, [itemId]: prev[itemId] - 1 };
-            console.log("cartItems", removeCart);
+            //console.log("cartItems", removeCart);
             return removeCart ;
         });
 
@@ -69,9 +69,9 @@ const ShopContextProvider = (props)=>{
 
                 let itemInfo = all_product.find((product) => product.id === Number(item));
 
-                console.log("itemInfo", itemInfo);
+                //console.log("itemInfo", itemInfo);
                 totalAmount += itemInfo.new_price * cartItems[item];
-                console.log("staticTotal", totalAmount );
+                //console.log("staticTotal", totalAmount );
             }
         }
     

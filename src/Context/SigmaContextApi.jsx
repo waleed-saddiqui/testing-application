@@ -20,13 +20,13 @@ export const ProductProvider = ({ children }) => {
     return newCart;
    
   };
-  console.log("aaaaabbb", getSigmaCart());
+  //console.log("aaaaabbb", getSigmaCart());
   
 
   const addToCart = (productId) => {
     setCart((prevCart) => {
       const newCart = { ...prevCart };
-      console.log("aaaaa",newCart );
+      //console.log("aaaaa",newCart );
       newCart[productId] = (newCart[productId] || 0) + 1;
       return newCart;
     });
@@ -43,6 +43,19 @@ export const ProductProvider = ({ children }) => {
     });
   };
 
+    //remove entire product 
+
+    const SigmaRemoveEntireFromCart = (productId) => {
+      setCart((prev) => {
+          const SigmaRemoveCart = { ...prev };
+          console.log("removeCart",SigmaRemoveCart);
+          delete SigmaRemoveCart[productId]; // Remove the entire product
+  
+          console.log("cartItems", SigmaRemoveCart);
+          return SigmaRemoveCart;
+      });
+  }
+
 
   // get total cart amount
 
@@ -50,14 +63,15 @@ export const ProductProvider = ({ children }) => {
     let totalAmount = 0;
 
     for (const item in cart) {
-      console.log("total", item);
+      //console.log("total", item);
       
         if (cart[item] > 0) {
 
             let itemInfo = products.find((product) => product.id === Number(item));
 
             totalAmount += itemInfo.variants.map((p) => p.price).reduce((acc, price) => acc + price, 0) * cart[item];
-console.log("Total",totalAmount );
+
+            //console.log("Total",totalAmount );
 
             
         }
@@ -99,7 +113,7 @@ const SigmaTotalCartItems = () => {
     getApiData(API);
   }, []);
 
-  const getSigmaContextValue = { products, cart, addToCart, removeToCart, SigmaTotalCartAmount, SigmaTotalCartItems };
+  const getSigmaContextValue = { products, cart, addToCart, removeToCart, SigmaTotalCartAmount, SigmaTotalCartItems,SigmaRemoveEntireFromCart };
 
   return (
     <ProductContext.Provider value={getSigmaContextValue}>
