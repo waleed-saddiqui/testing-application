@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import './CartItems.css';
 import { ShopContext } from '../../Context/ShopContext';
+import { useProductContext } from '../../Context/SigmaContextApi';
 
 const CartItems = () => {
     const { removeEntireFromCart, addToCart, getTotalCartAmount, all_product, cartItems, removeFromCart } = useContext(ShopContext);
+    const {SigmaTotalCartAmount} = useProductContext();
 
 
     return (
@@ -80,7 +82,7 @@ const CartItems = () => {
 
                         <div className="cartitems-total-items">
                             <p>Subtotal</p>
-                            <p>${getTotalCartAmount()}</p>
+                            <p>${getTotalCartAmount() + SigmaTotalCartAmount()}</p>
                         </div>
 
                         <hr />
@@ -93,7 +95,7 @@ const CartItems = () => {
                         <hr />
                         <div className="cartitems-total-items">
                             <p>Total</p>
-                            <p>${getTotalCartAmount()}</p>
+                            <p>${getTotalCartAmount()+ SigmaTotalCartAmount()}</p>
                         </div>
 
                     </div>
